@@ -1,0 +1,114 @@
+% Begin document with font 12.
+\documentclass[12pt]{report}
+
+% Import necessary packages.
+\usepackage[table]{xcolor}            % Add support for colors.
+\usepackage[T1]{fontenc}              % Enable modern fonts.
+\usepackage{amsmath}                  % More advanced mathematical type setting.
+\usepackage{amssymb}                  % Better support for various symbols.
+\usepackage{graphicx}                 % Support for advanced figures.
+\usepackage{fontspec}                 % Support for additional fonts.
+\usepackage[hidelinks]{hyperref}      % Support for automatic links and references.
+\usepackage{bookmark}                 % Faster consequent PDF generation.
+\usepackage[nottoc,notlot,
+notlof,numbib]{tocbibind}             % Better automatic generation of the table of contents.
+\usepackage[toc]{appendix}            % Support for appendices.
+\usepackage{tocloft}                  % Add support for disabling appendix toc numbers. 
+\usepackage{pageslts}                 % Support for automatic calculation of total pages.
+\usepackage{xassoccnt}                % Automatic calculation of figures, tables and appendices.
+\usepackage{setspace}                 % Add support for custom spacing between text lines.
+\usepackage{enumitem}                 % Support for bullet point and numbered lists.
+\usepackage{chngcntr}                 % Additional library needed for appendices counting.
+\usepackage{flafter}                  % Force figures to appear after their definition.
+\usepackage[section]{placeins}        % Add support for additional figure placement commands.
+\usepackage{float}                    % Add support for figures.
+\usepackage{tikz}                     % Special characters.
+\usepackage{tabularx}                 % Fancier tables.
+\usepackage{xltabular}                % Long fancy tables.
+\usepackage{pifont}                   % Some special characters.
+\usepackage{dirtytalk}                % Support for block quotes.
+\usepackage{changepage}               % Support for paragraph. indentation.
+\usepackage{caption}                  % Make it possible to add more space between caption.
+\usepackage{color}                    % Provides better coloring options.
+\usepackage{soul}                     % Extra options for underlining and overlining.
+\usepackage{refcount}                 % For calculating the correct page numbers.
+
+% Force itemize items to have question prefix.
+\renewcommand{\itemautorefname}{Question}
+
+% Define default path for graphics.
+\graphicspath{{Figures/}}
+
+% Define basic document properties.
+\usepackage[a4paper,left=35.00mm, right=20.00mm, top=35.00mm, bottom=20.00mm]{geometry}
+\setmainfont{Times New Roman}
+
+% Define paragraph defaults.
+\usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
+
+% Prevent single text lines from next page.
+\clubpenalty=10000
+\widowpenalty=10000
+
+% Define chapter, section and subsection sizes.
+\newcommand{\chapterfont}{\normalfont\fontsize{16pt}{19.2pt}\bfseries}
+\newcommand{\sectionfont}{\normalfont\fontsize{13pt}{15.6pt}\bfseries}
+\newcommand{\subsectionfont}{\normalfont\fontsize{12pt}{14.4pt}\bfseries}
+
+% Fix table of contents title sizes.
+\renewcommand{\cfttoctitlefont}{\chapterfont}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{10pt}
+\renewcommand{\cftloftitlefont}{\chapterfont}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{10pt}
+\renewcommand{\cftlottitlefont}{\chapterfont}
+\setlength{\cftbeforelottitleskip}{16pt}
+\setlength{\cftafterlottitleskip}{10pt}
+
+% Define other title properties.
+\usepackage{titlesec}
+\titleformat{\chapter}
+{\chapterfont}{\thechapter}{1em}{\textbf}
+\titlespacing*{\chapter}{0pt}{0pt}{2.3ex plus .2ex}
+\titleformat{\section}
+{\sectionfont}{\thesection}{1em}{\textbf}
+\titleformat{\subsection}
+{\subsectionfont}{\thesubsection}{1em}{\textbf}
+
+% Making figure and table numbering continuous.
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% Force figures to be in the same chapter.
+\floatplacement{figure}{htb}
+
+% Make figures by default have text width.
+\setkeys{Gin}{width=\textwidth}
+
+% Setup automatic figure, table and appendix counting.
+\NewTotalDocumentCounter{totalfigures}
+\NewTotalDocumentCounter{totaltables}
+\NewTotalDocumentCounter{appendixchapters}
+\DeclareAssociatedCounters{figure}{totalfigures}
+\DeclareAssociatedCounters{table}{totaltables}
+\DeclareAssociatedCounters{chapter}{appendixchapters}
+
+% Suspend appendix counter so it won't count all the chapters.
+\SuspendCounters{appendixchapters}
+
+% Fix appendices table of contents entry.
+\renewcommand{\appendixtocname}{APPENDICES}
+
+% Define acronyms
+\usepackage[acronym,automake,nomain]{glossaries}
+\makeglossaries
+
+% Setup bibliography.
+% Setup style ieee.
+% Setup citeauthor to show only first author name, when more than two authors
+% and print both authors, if there are less than two authors.
+\usepackage[style=ieee, mincitenames=1, maxcitenames=2]{biblatex}
+
+% Set bibliography source file.
+\bibliography{References}

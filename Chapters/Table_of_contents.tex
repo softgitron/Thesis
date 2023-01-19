@@ -1,0 +1,18 @@
+% Create table of contents.
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\tableofcontents
+
+% Add some extra space.
+\vspace{1cm}
+
+% Prevent list of figures and tables from having separate page.
+\begingroup
+	\let\clearpage\relax
+	
+	% Alter list of figures title.
+	\renewcommand{\listfigurename}{LIST OF FIGURES}
+	
+	% Print list of figures.
+	\pagebreak
+	\listoffigures
+\endgroup

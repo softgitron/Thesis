@@ -1,0 +1,90 @@
+% Import document properties file that defines formatting
+% of the document.
+\input{Document_properties}
+
+\begin{document}
+	% Input title page
+	\input{Chapters/Title}
+
+	% Setup roman pagenumbering.
+	\thispagestyle{empty}
+	\pagenumbering{roman}
+
+	% Begin tight line spacing used in abstract.
+	\singlespacing
+	
+	\input{Chapters/Abstract}
+	
+	\input{Chapters/Tiivistelma}
+	
+	% Begin standard line spacing.
+	\onehalfspacing
+	
+	\input{Chapters/Acknowledgments}
+		
+	% Setup normal arabic page numbering.
+	% Forced page break is needed here, because abbreviations
+	% must be ended before beginning the the arabic page numbering.
+	\pagebreak
+	\pagenumbering{arabic}
+		
+	% Input table of contents.
+	\input{Chapters/Table_of_contents}
+	
+	% Print list of abvreviations.
+	\input{Chapters/List_of_abbreviations}
+	
+	\input{Chapters/Introduction}
+	
+	\input{Chapters/Background}
+	
+	\input{Chapters/Research_methodologies_and_case}
+	
+	\input{Chapters/Initial_planning_and_information_gathering}
+	
+	\input{Chapters/Planning_of_the_test_automation_system}
+	
+	\input{Chapters/Produced_test_automation_system}
+	
+	\input{Chapters/Discussion}
+	
+	\input{Chapters/Conclusions}
+	\label{end_of_main_contents}
+	
+	\renewcommand{\bibname}{REFERENCES}
+	\printbibliography[heading=bibintoc]
+	
+	\ResumeSuspendedCounters{appendixchapters}
+	
+	% Begin appendices chapter.
+	\noappendicestocpagenum
+	\begin{appendices}
+		% Disable appendix page number from toc entries.
+		\addtocontents{toc}{\cftpagenumbersoff{chapter}}
+		\addtocontents{toc}{\cftpagenumbersoff{section}}
+		\addtocontents{toc}{\cftpagenumbersoff{subsection}}
+		
+		% Disable figure and table page numbers from appendices.
+		\addtocontents{lof}{\cftpagenumbersoff{figure}}
+		\addtocontents{lot}{\cftpagenumbersoff{table}}
+		
+		% Reset page counter at the beginning of each appendix.
+		% Remove page numbering altogether, if there is only one appendix.
+		
+		\setcounter{page}{1}
+		\input{Chapters/Appendix_interview_questions}
+		\pagebreak
+		
+		\setcounter{page}{1}
+		\input{Chapters/Appendix_survey_questions}
+		\pagebreak
+		
+		\setcounter{page}{1}
+		\input{Chapters/Appendix_project_requirements}
+		\pagebreak
+		
+		\setcounter{page}{1}
+		\input{Chapters/Appendix_review_interview_questions}
+		\thispagestyle{empty}
+	\end{appendices}
+\end{document}

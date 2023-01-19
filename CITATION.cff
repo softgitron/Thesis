@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite as follows."
+authors:
+- family-names: "Juntunen"
+  given-names: "Roni"
+title: "Introducing test automation for an existing software project"
+version: 1.0.0
+date-released: 2023-01-16
+url: "https://urn.fi/URN:NBN:fi-fe202301162927"

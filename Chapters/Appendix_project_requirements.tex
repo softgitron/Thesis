@@ -1,0 +1,155 @@
+\chapter{APPENDIX: PROJECT'S REQUIREMENTS}\label{appendix:projects_requirements}
+
+This appendix contains a list of accepted requirements that were considered during the project.
+
+\newcounter{RE}
+\newcommand\reid{RE \stepcounter{RE}\arabic{RE}}
+
+\section*{General project requirements}
+The following table describes broader project requirements based on which project's activities will be carried out.
+\begin{center}
+	\rowcolors{1}{rgb:black,1;white,30}{}
+	\begin{tabularx}{\textwidth}{|c|c|X|}
+		\hline
+		\textbf{ID} & \textbf{Source} & \textbf{Description}\\
+		\hline
+		\reid & First meeting & Strategy for Hubshare's test automation must be created.\\
+		\hline
+		\reid & First meeting & Technical stack must be defined for Hubshare's test automation.\\
+		\hline
+		\reid & Meta planning & It must be decided which testing frameworks will be used.\\
+		\hline
+		\reid & Meta planning & It must be decided how test automation will be introduced.\\
+		\hline
+	\end{tabularx}
+\end{center}
+
+\section*{Management requirements}
+\begin{center}
+	\rowcolors{1}{rgb:black,1;white,30}{}
+	\begin{xltabular}{\textwidth}{|c|c|c|X|}	
+		\hline
+		\textbf{ID} & \textbf{Source} & \textbf{Stakeholder} & \textbf{Description}\\
+		\endfirsthead
+		
+		\hline
+		\multicolumn{4}{|l|}{Continued from the previous page.} \\
+		\hline
+		\textbf{ID} & \textbf{Source} & \textbf{Stakeholder} & \textbf{Description}\\
+		\endhead
+		
+		\multicolumn{4}{|r|}{{Continues on the next page.}} \\
+		\hline
+		\endfoot
+		
+		\endlastfoot
+		
+		\hline
+		\reid & First meeting & Team & It must be defined how test automation coverage can be improved for already written code sections.\\ 
+		\hline
+		\reid & Meta planning & Management & It must be defined which metrics will be used to measure success.\\
+		\hline
+		\reid & Meta planning & Management & \gls{dod} must be defined for the test automation.\\
+		\hline
+		\reid & Meta planning & Team & It must be defined clearly when writing of the automation test cases can be ended.\\
+		\hline
+		\reid & Interviews & Team & Test case naming conventions must be clearly defined.\\
+		\hline
+		\reid & Interviews & Team & It must be defined what kind of testing will be done on which testing level.\\
+		\hline
+		\reid & Interviews & Team & Daily test automation related activities must be defined.\\
+		\hline
+		\reid & Interviews & Team & Ownership of the test automation cases must be defined.\\
+		\hline
+		\reid & Interviews & Team & Practices for test automation result's checking must be established.\\
+		\hline
+		\reid & Interviews & \gls{po} & Timing of the test automation activities must be planned.\\
+		\hline
+		\reid & Interviews & Management & If the intermittent bug ends up in the stable, there must be a process that defines how the bug will be fixed.\\
+		\hline
+	\end{xltabular}
+\end{center}
+
+\section*{Technical requirements}
+\begin{center}
+	\rowcolors{1}{rgb:black,1;white,30}{}
+	\begin{xltabular}{\textwidth}{|c|c|X|}
+		\hline
+		\textbf{ID} & \textbf{Source} & \textbf{Description (As a [stakeholder] I want to, so that)}\\
+		\endfirsthead
+		
+		\hline
+		\multicolumn{3}{|l|}{Continued from the previous page.} \\
+		\hline
+		\textbf{ID} & \textbf{Source} & \textbf{Description (As a [stakeholder] I want to, so that)}\\
+		\endhead
+		
+		\multicolumn{3}{|r|}{{Continues on the next page.}} \\
+		\hline
+		\endfoot
+		
+		\endlastfoot
+		
+		\hline
+		\reid & First meeting & As a developer, I want to be able to mock components easily so that I can easily test parts in isolation. \\
+		\hline
+		\reid & First meeting & As a developer, I want to be able to setup database content easily so that I can concentrate on other aspect of the test writing. \\
+		\hline
+		\reid & First meeting & As a developer, I want to write tests for Angular-based frontend so the test framework must be compatible with angular.  \\
+		\hline
+		\reid & First meeting & As a developer, I want to be able to test \gls{api} interfaces using test automation so I can easily \gls{e2e} verify my backend changes. \\
+		\hline
+		\reid & First meeting & Test automation must be compatible with Windows-based development environment. \\
+		\hline
+		\reid & Meta Planning & As a developer, I want that tests are automatically run in the \gls{ci} pipeline so that I don't have to run all tests locally.\\
+		\hline
+		\reid & Interviews & As a customer, I want that the test code is fully separate from the production code so that there will not be accidental test code in the production code.\\
+		\hline
+		\reid & Interviews & As a test automation engineer, I want that test work independently of each other so they can be parallelised well and will not cause random failures so easily.\\
+		\hline
+		\reid & Interviews & As a developer, I want to have assertion helpers so that I can easily check the execution results.\\
+		\hline
+		\reid & Interviews & As a test automation engineer, I want that every assert contains a handwritten message so that it is easy to find assert, when an automation test case fails.\\
+		\hline
+		\reid & Interviews & As a developer, I want that the logging of the test automation is clear so I can easily understand what went wrong with the run.\\
+		\hline
+		\reid & Interviews & As a developer, I want that the logging of the test automation is broad so that I can easily understand what went wrong if the test case fails.\\
+		\hline
+		\reid & Interviews & As a developer, I want that different test automation frameworks have similarities so that I can just learn one framework and apply my knowledge to others.\\
+		\hline
+		\reid & Interviews & As a developer, I want that there is an easy way to trigger \gls{ci} pipeline runs and adjust run parameters.\\
+		\hline
+		\reid & Interviews & As a manager, I want to be able to follow current test automation coverage so that I can asses the current state of the test automation.\\
+		\hline
+		\reid & Survey & As a developer, I want that automation tests are easy to run so that I can concentrate on writing new test cases.\\
+		\hline
+		\reid & Survey & As a developer, I want that automation test environment is easy to setup so I do not have to waste time setting it up.\\
+		\hline
+		\reid & Survey & As a developer, I want that the test automation framework works reliably so I don't need to repeat test cases needlessly.\\
+		\hline
+		\reid & Survey & As a developer, I want that the test automation framework is clear so that I can extend its functionality easily.\\
+		\hline
+		\reid & Survey & As a developer, I want that the test automation cases are fast to start so that I do not have to wait long for the results.\\
+		\hline
+		\reid & Survey & As a developer, I want that the test automation cases are easy to debug so that I can easily understand the problem.\\
+		\hline
+		\reid & Survey & As a developer, I want that the test automation cases can be run in parallel so that I can get the test results fast.\\
+		\hline
+	\end{xltabular}
+\end{center}
+
+\section*{Other requirements}
+\begin{center}
+	\rowcolors{1}{rgb:black,1;white,30}{}
+	\begin{tabularx}{\textwidth}{|c|c|c|X|}
+		\hline
+		\textbf{ID} & \textbf{Source} & \textbf{Stakeholder} & \textbf{Description}\\
+		\hline
+		\reid & First meeting & Developers & Developers must be educated to use the new test automation systems.\\
+		\hline
+		\reid & Meta planning & Team & There must be documentation available for the test automation systems.\\
+		\hline
+		\reid & Meta planning & Developers & It must be investigated how developers can be motivated to write new test automation cases.\\
+		\hline
+	\end{tabularx}
+\end{center}

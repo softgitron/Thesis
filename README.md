@@ -1,0 +1,2 @@
+# Information about this repository
+This repository contains source code for the Roni Juntunen's Master's Thesis: "Introducing test automation for an existing software project". See [LUTPub](https://urn.fi/URN:NBN:fi-fe202301162927) for the compiled version.

@@ -1,0 +1,23 @@
+name: Build thesis
+on: [push]
+env:
+  ROOT_FILE: Roni_Juntunen_Thesis
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Replace Times New Roman with Liberation Serif
+        run: sed -i 's/Times New Roman/Liberation Serif/g' Document_properties.tex
+      - name: Thesis compilation
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: ${{ env.ROOT_FILE }}.tex
+          latexmk_use_xelatex: true
+          extra_system_packages: ttf-liberation
+      - name: Store compiled thesis
+        uses: actions/upload-artifact@v2
+        with: 
+          name: Latest-thesis-Roni-Juntunen
+          path: "${{ env.ROOT_FILE }}.pdf"
